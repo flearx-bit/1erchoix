@@ -565,7 +565,7 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-left reveal">
+  <div class="contact-left">
     <div class="sec-label">Nous joindre</div>
     <h2 class="sec-title">Demandez votre soumission gratuite</h2>
     <p>Décrivez-nous votre projet et nous vous répondrons rapidement. Déplacement et évaluation sur place toujours gratuits, sans obligation.</p>
@@ -588,7 +588,7 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
       </div>
     </div>
   </div>
-  <form class="cform reveal" onsubmit="submitForm(event)">
+  <form class="cform" onsubmit="submitForm(event)">
     <div class="f-row">
       <div class="f-grp"><label>Prénom *</label><input type="text" placeholder="Jean" required></div>
       <div class="f-grp"><label>Nom *</label><input type="text" placeholder="Tremblay" required></div>
@@ -747,4 +747,23 @@ document.addEventListener('keydown', e => {
 
 // Scroll reveal
 const ro = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'), 
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'), i*90); ro.unobserve(e.target); } });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Zone pills
+document.querySelectorAll('.zone-pill').forEach(p => p.addEventListener('click', () => {
+  document.querySelectorAll('.zone-pill').forEach(z => z.classList.remove('active'));
+  p.classList.add('active');
+}));
+
+// Form
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('fOk').style.display='block';
+  e.target.querySelector('.f-submit').textContent='Envoyé ✓';
+  e.target.querySelector('.f-submit').style.background='#2a7a3a';
+}
+</script>
+</body>
+</html>
