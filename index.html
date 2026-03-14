@@ -37,9 +37,9 @@ nav {
   transition: height 0.3s ease;
 }
 nav.scrolled { height: 62px; }
-.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.nav-logo-text { font-family: 'Playfair Display', serif; font-size: 0.92rem; color: var(--blanc); line-height: 1.25; }
-.nav-logo-text strong { color: var(--cuivre); display: block; }
+.nav-logo { display: flex; align-items: center; gap: 0; text-decoration: none; }
+.nav-logo img { height: 52px; width: auto; object-fit: contain; filter: brightness(1.1); transition: height 0.3s ease; }
+nav.scrolled .nav-logo img { height: 42px; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pierre); text-decoration: none; transition: color 0.2s; position: relative; }
 .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--cuivre); transform: scaleX(0); transform-origin: right; transition: transform 0.3s ease; }
@@ -265,19 +265,7 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <svg width="38" height="38" viewBox="0 0 40 40" fill="none" style="flex-shrink:0">
-      <rect x="7" y="19" width="26" height="17" rx="1" fill="#8b3a2a"/>
-      <rect x="13" y="23" width="14" height="13" fill="#0d0b09"/>
-      <rect x="4" y="15" width="32" height="5" rx="1" fill="#c07830"/>
-      <rect x="10" y="6" width="20" height="10" rx="1" fill="#8b3a2a"/>
-      <rect x="13" y="5" width="14" height="8" rx="1" fill="#6b2215"/>
-      <rect x="18" y="1" width="4" height="6" rx="1" fill="#c07830"/>
-      <path d="M18 3 Q20 0.5 22 3" stroke="#e09840" stroke-width="1.2" fill="none"/>
-    </svg>
-    <div class="nav-logo-text">
-      Cheminée &amp; Revêtement
-      <strong>1er Choix</strong>
-    </div>
+    <img src="images/logo.png" alt="Cheminée et Revêtement 1er Choix">
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -579,9 +567,9 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
         <div class="ci-ico">📞</div>
         <div><div class="ci-lbl">Téléphone</div><div class="ci-val">514-546-3473</div></div>
       </a>
-      <a href="mailto:eric1erchoix@outlook.com" class="cinfo">
+      <a href="/cdn-cgi/l/email-protection#d4b1a6bdb7e5b1a6b7bcbbbdac94bba1a0b8bbbbbffab7bbb9" class="cinfo">
         <div class="ci-ico">✉️</div>
-        <div><div class="ci-lbl">Courriel</div><div class="ci-val">eric1erchoix@outlook.com</div></div>
+        <div><div class="ci-lbl">Courriel</div><div class="ci-val"><span class="__cf_email__" data-cfemail="c5a0b7aca6f4a0b7a6adaaacbd85aab0b1a9aaaaaeeba6aaa8">[email&#160;protected]</span></div></div>
       </a>
       <a href="https://www.facebook.com/Chemin%C3%A9e-rev%C3%AAtements-1er-choix-114937556560070" target="_blank" class="cinfo">
         <div class="ci-ico">📘</div>
@@ -646,7 +634,7 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:5145463473">514-546-3473</a></li>
-        <li><a href="mailto:eric1erchoix@outlook.com">eric1erchoix@outlook.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#a1c4d3c8c290c4d3c2c9cec8d9e1ced4d5cdcececa8fc2cecc"><span class="__cf_email__" data-cfemail="214453484210445342494e4859614e54554d4e4e4a0f424e4c">[email&#160;protected]</span></a></li>
         <li><a href="#zones">Zones desservies</a></li>
         <li><a href="#contact">Soumission gratuite</a></li>
       </ul>
@@ -669,7 +657,7 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
 <!-- BACK TO TOP -->
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Haut de page">↑</button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Hero bg pan
 window.addEventListener('load', () => document.getElementById('heroBg').classList.add('loaded'));
 
@@ -752,17 +740,4 @@ document.addEventListener('keydown', e => {
 
 // Scroll reveal
 const ro = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'), i*90); ro.unobserve(e.target); } });
-}, {threshold: 0.1});
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-// Form
-function submitForm(e) {
-  e.preventDefault();
-  document.getElementById('fOk').style.display='block';
-  e.target.querySelector('.f-submit').textContent='Envoyé ✓';
-  e.target.querySelector('.f-submit').style.background='#2a7a3a';
-}
-</script>
-</body>
-</html>
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'), 
