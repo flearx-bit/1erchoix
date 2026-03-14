@@ -37,9 +37,12 @@ nav {
   transition: height 0.3s ease;
 }
 nav.scrolled { height: 62px; }
-.nav-logo { display: flex; align-items: center; gap: 0; text-decoration: none; }
-.nav-logo img { height: 52px; width: auto; object-fit: contain; filter: brightness(1.1); transition: height 0.3s ease; }
-nav.scrolled .nav-logo img { height: 42px; }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo img { height: 66px; width: auto; object-fit: contain; filter: brightness(1.1); transition: height 0.3s ease; }
+nav.scrolled .nav-logo img { height: 50px; }
+.nav-logo-desc { display: flex; flex-direction: column; gap: 3px; }
+.nav-logo-desc span { font-family: 'Playfair Display', serif; font-size: 0.88rem; color: var(--blanc); line-height: 1.2; }
+.nav-logo-desc small { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-chaud); }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pierre); text-decoration: none; transition: color 0.2s; position: relative; }
 .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--cuivre); transform: scaleX(0); transform-origin: right; transition: transform 0.3s ease; }
@@ -266,6 +269,10 @@ footer { background: var(--noir); border-top: 1px solid rgba(192,120,48,0.15); }
 <nav id="nav">
   <a href="#hero" class="nav-logo">
     <img src="images/logo.png" alt="Cheminée et Revêtement 1er Choix">
+    <div class="nav-logo-desc">
+      <span>Cheminée &amp; Revêtement <strong style="color:var(--cuivre)">1er Choix</strong></span>
+      <small>Montréal · Laurentides · Rive-Nord</small>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
